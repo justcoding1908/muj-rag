@@ -53,10 +53,18 @@ class AskResponse(BaseModel):
     found_in_document: bool
 
 
+def client_ip(request: Request) -> str:
+    # Deployed on Railway, every request arrives through their edge proxy, so
+    # request.client.host would be the proxy's IP for every visitor — that turns the
+    # per-IP limit into one shared global limit. Railway's proxy sets X-Forwarded-For to
+    # the real visitor IP, so prefer that (its first entry) when present.
+    forwarded = request.headers.get("x-forwarded-for")
+    if forwarded:
+        return forwarded.split(",")[0].strip()
+    return request.client.host
+
+
 def check_rate_limit(client_ip: str):
-    # Note: if this ever runs behind a reverse proxy/load balancer, request.client.host
-    # will be the proxy's IP for every request unless the proxy is configured to forward
-    # the real client IP (e.g. via X-Forwarded-For) and that header is trusted correctly.
     key = f"ratelimit:{client_ip}:{time.strftime('%Y-%m-%d')}"
     count = redis_client.incr(key)
     if count == 1:
@@ -72,7 +80,7 @@ def health():
 
 @app.post("/ask", response_model=AskResponse)
 def ask(req: AskRequest, request: Request):
-    check_rate_limit(request.client.host)
+    check_rate_limit(client_ip(request))
 
     try:
         result = request.app.state.chain.invoke(req.question)

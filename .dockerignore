@@ -1,0 +1,14 @@
+venv/
+venv312/
+__pycache__/
+*.pyc
+.git/
+.github/
+.env
+chroma_db/
+eval_results*.json
+injection_results.json
+*.log
+.pytest_cache/
+tests/
+rep_url

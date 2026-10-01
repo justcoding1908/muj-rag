@@ -68,6 +68,33 @@ pytest tests/
 These are free — no Groq calls. They check retrieval, the citation-grounding safety net,
 and the API's request validation and rate limiting.
 
+## Deploying (Railway)
+
+A `Dockerfile` is included that builds the vector database at image-build time (from
+the committed `data/` PDFs and `ocr_cache/`, so no OCR or network calls happen at
+container startup) and serves the API with `uvicorn`.
+
+1. Create a [Railway](https://railway.app) project and connect it to this GitHub repo.
+   Railway detects `railway.toml` and builds from the `Dockerfile` automatically.
+2. Add Railway's **Redis** plugin to the project — it sets a `REDIS_URL` variable
+   automatically, which both the LLM cache and the API's rate limiter already read.
+3. In the project's environment variables, set `GROQ_API_KEY` to a real key.
+   `DAILY_LIMIT_PER_IP` (default 30) can be overridden the same way.
+4. Railway auto-deploys on every push to `main` once connected.
+
+Rate limiting counts requests by the visitor's real IP, read from the
+`X-Forwarded-For` header Railway's proxy sets — not the raw connection IP, which would
+be Railway's proxy for every visitor behind it.
+
+To build and run the same image locally first:
+```bash
+docker build -t muj-rag .
+docker run --rm -p 8000:8000 \
+  -e GROQ_API_KEY=your-key \
+  -e REDIS_URL=redis://host.docker.internal:6379/1 \
+  muj-rag
+```
+
 The full 62-question eval (`run_eval.py`) does call Groq and costs real tokens against
 the daily quota, so it isn't run on every push. Run it manually:
 ```bash
