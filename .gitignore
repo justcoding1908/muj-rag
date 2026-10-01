@@ -1,0 +1,20 @@
+# Secrets — never commit real keys. .env.example documents the required variables.
+.env
+
+# Virtual environments
+venv/
+venv312/
+
+# Python
+__pycache__/
+*.pyc
+
+# Generated artifacts — regenerate with `python ingest.py` / `python run_eval.py`,
+# don't rely on a committed copy drifting out of sync with the code.
+chroma_db/
+eval_results*.json
+injection_results.json
+*.log
+
+# Editor/OS cruft
+.DS_Store

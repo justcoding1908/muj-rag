@@ -1,0 +1,528 @@
+[
+  {
+    "id": 1,
+    "category": "factual",
+    "question": "What is the minimum attendance percentage required to be permitted to write the end-semester exam?",
+    "expected_answer": "75% attendance in that individual course.",
+    "source_page": 5,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 2,
+    "category": "factual",
+    "question": "What letter grade is given to a student who is detained due to insufficient attendance?",
+    "expected_answer": "DT (Detained) grade.",
+    "source_page": 5,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 3,
+    "category": "factual",
+    "question": "What is the maximum duration allowed to complete an academic program?",
+    "expected_answer": "N+2, where N is the minimum program duration — currently 2 years plus the actual duration of the program.",
+    "source_page": 1,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 4,
+    "category": "factual",
+    "question": "What percentage of total credits must a student generally secure to be promoted to the next odd higher semester?",
+    "expected_answer": "Generally 60% of the total credits (exact figures vary by program per the Academic Handbook).",
+    "source_page": 1,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 5,
+    "category": "factual",
+    "question": "What is the minimum CGPA required for graduation?",
+    "expected_answer": "5.0, on a 10-point scale where 10 is the maximum.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 6,
+    "category": "factual",
+    "question": "What is the maximum percentage of a semester's credits that can be fulfilled via SWAYAM/NPTEL MOOC platforms?",
+    "expected_answer": "40% of that semester's credits.",
+    "source_page": 8,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 7,
+    "category": "factual",
+    "question": "What minimum CGPA does a B.Tech student need to transfer credits from another institution during their 3rd/4th year?",
+    "expected_answer": "CGPA of 7 or above, with consistent academic performance.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 8,
+    "category": "factual",
+    "question": "What is the maximum number of credits a student can register for in a semester, including re-registered courses?",
+    "expected_answer": "32 credits maximum per semester.",
+    "source_page": 2,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 9,
+    "category": "factual",
+    "question": "By when must a student withdraw a course registration if they no longer want to take it?",
+    "expected_answer": "At least seven days before the commencement of the Mid-Term Examination notified in the academic calendar.",
+    "source_page": 2,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 10,
+    "category": "factual",
+    "question": "How are theory course marks split between in-semester and end-semester assessment?",
+    "expected_answer": "Out of 100 marks total: 60 for in-semester assessment (30 sessional exam + 30 CWS) and 40 for the end-semester exam.",
+    "source_page": 4,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 11,
+    "category": "factual",
+    "question": "How many times does the Class Committee meet in a semester?",
+    "expected_answer": "Three times (thrice) per semester.",
+    "source_page": 5,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 12,
+    "category": "factual",
+    "question": "What is the minimum percentage a UG student must score in the end-semester exam itself to get a passing grade in a theory course?",
+    "expected_answer": "35% in the end-semester exam.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024",
+    "alt_sources": [
+      {
+        "document": "Academic Rules and Regulations 2024",
+        "page": 5
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "category": "factual",
+    "question": "What is the minimum percentage a PG student must score in the end-semester exam itself to get a passing grade in a theory course?",
+    "expected_answer": "40% in the end-semester exam.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024",
+    "alt_sources": [
+      {
+        "document": "Academic Rules and Regulations 2024",
+        "page": 5
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "category": "factual",
+    "question": "What grade does a student get in a make-up exam compared to what they would have otherwise secured?",
+    "expected_answer": "One grade lower than what they actually secured, except a student who earns an E grade retains the E. This rule doesn't apply to students who had an I grade in the original ETE.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 15,
+    "category": "factual",
+    "question": "What course code number range is used for Lab Courses?",
+    "expected_answer": "30-39.",
+    "source_page": 2,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 16,
+    "category": "paraphrased",
+    "question": "If a student misses too many classes, below what attendance percentage do they lose the right to sit for their final exam?",
+    "expected_answer": "Below 75% attendance in that course.",
+    "source_page": 5,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 17,
+    "category": "paraphrased",
+    "question": "Is there a cap on how many total credits a student can carry in a semester where they're redoing a subject they previously got detained or failed in?",
+    "expected_answer": "Yes — 32 credits maximum for that semester.",
+    "source_page": 2,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 18,
+    "category": "paraphrased",
+    "question": "How many days before mid-terms begin does a student need to drop a course if they change their mind about taking it?",
+    "expected_answer": "At least 7 days before the Mid-Term Examination begins.",
+    "source_page": 2,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 19,
+    "category": "paraphrased",
+    "question": "What cumulative grade average must a B.Tech student maintain before they're allowed to study a course at another institute and bring the credits back to MUJ?",
+    "expected_answer": "A CGPA of 7 or above.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 20,
+    "category": "paraphrased",
+    "question": "On a 10-point cumulative scale, what's the lowest average score a student needs to actually graduate?",
+    "expected_answer": "5.0.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 21,
+    "category": "cross_reference",
+    "question": "If a student has under 75% attendance in a course and is given a DT grade, what do they need to do about that course afterward, and what's the maximum credit load they can carry while doing it?",
+    "expected_answer": "They must re-register for the course at the next available opportunity (p.5), and can carry a maximum of 32 credits in that semester while re-registering (p.2).",
+    "source_page": 2,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 22,
+    "category": "cross_reference",
+    "question": "A student doesn't earn enough credits to move up to the next odd semester and is placed on academic probation. If they still haven't earned enough credits by the end of that probation year, what happens?",
+    "expected_answer": "Their registration for the academic program is terminated.",
+    "source_page": 6,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 23,
+    "category": "cross_reference",
+    "question": "A student gets an F grade because they didn't show up for the end-semester exam without a valid reason. Can they take a make-up exam, and if they would have otherwise earned a B, what grade do they get instead?",
+    "expected_answer": "Yes, students with an F grade are eligible for the make-up exam; they'd be awarded one grade lower than what they would have secured — so a B becomes a C.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 24,
+    "category": "cross_reference",
+    "question": "If a student wants to use an NPTEL course to clear a DT grade, what share of that semester's credits can it cover, and who has to approve the course as equivalent first?",
+    "expected_answer": "Up to 40% of the semester's credits, and a departmental committee chaired by the HoD must first recognize the course as equivalent (by comparing curricula and credit/duration).",
+    "source_page": 8,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 25,
+    "category": "cross_reference",
+    "question": "A B.Tech student with CGPA >= 7 transfers in credits from another university. Do those transferred credits count toward their CGPA?",
+    "expected_answer": "No — transferred credits are not used in GPA/CGPA computation, though they do count toward the student's overall credit requirement for the degree.",
+    "source_page": 7,
+    "source_doc": "Academic Rules and Regulations 2024"
+  },
+  {
+    "id": 26,
+    "category": "unanswerable",
+    "question": "What is the minimum GPA required to avoid being placed on academic probation?",
+    "expected_answer": "NOT IN DOCUMENT — probation is triggered by insufficient credits earned, not a GPA threshold; system should say it doesn't know rather than inventing a GPA cutoff.",
+    "source_page": null
+  },
+  {
+    "id": 27,
+    "category": "unanswerable",
+    "question": "What is the hostel accommodation fee for a B.Tech student at MUJ?",
+    "expected_answer": "NOT IN DOCUMENT — the document references clearing hostel dues but never states any fee amounts.",
+    "source_page": null
+  },
+  {
+    "id": 28,
+    "category": "unanswerable",
+    "question": "What is the procedure for filing an anti-ragging complaint?",
+    "expected_answer": "NOT IN DOCUMENT — the Code of Ethics says an anti-ragging committee exists and that action follows the DoT Policy, but no document describes a procedure for filing a complaint.",
+    "source_page": null
+  },
+  {
+    "id": 29,
+    "category": "unanswerable",
+    "question": "How many days of medical leave is a student entitled to in a semester?",
+    "expected_answer": "NOT IN DOCUMENT — the document only states that a student absent more than 6 weeks at a stretch without sanctioned leave can be terminated; it never gives a medical leave day allowance.",
+    "source_page": null
+  },
+  {
+    "id": 30,
+    "category": "unanswerable",
+    "question": "What entrance exam score is required for admission to the B.Tech program?",
+    "expected_answer": "NOT IN DOCUMENT — the document says eligibility varies by program and points to the university website, without giving any actual score or cutoff.",
+    "source_page": null
+  },
+  {
+    "id": 31,
+    "category": "factual",
+    "question": "How many black DoTs can be awarded for a minor offence under the DoT policy?",
+    "expected_answer": "1-2 Dots.",
+    "source_page": 4,
+    "source_doc": "DoT Policy 2025-26"
+  },
+  {
+    "id": 32,
+    "category": "factual",
+    "question": "What happens to a student who accumulates 12 or more black dots?",
+    "expected_answer": "Expulsion from the university without a refund of any kind.",
+    "source_page": 5,
+    "source_doc": "DoT Policy 2025-26"
+  },
+  {
+    "id": 33,
+    "category": "factual",
+    "question": "For how many days is a student suspended from classes on reaching 5 black dots?",
+    "expected_answer": "7 days.",
+    "source_page": 5,
+    "source_doc": "DoT Policy 2025-26"
+  },
+  {
+    "id": 34,
+    "category": "factual",
+    "question": "How many White DoTs does a student earn for six months of good conduct after a DoT order?",
+    "expected_answer": "Two White DoTs.",
+    "source_page": 7,
+    "source_doc": "DoT Policy 2025-26"
+  },
+  {
+    "id": 35,
+    "category": "paraphrased",
+    "question": "How long does the Proctorial Board have to submit its findings on a major offence committed in the hostel?",
+    "expected_answer": "Within five to seven working days.",
+    "source_page": 6,
+    "source_doc": "DoT Policy 2025-26"
+  },
+  {
+    "id": 36,
+    "category": "factual",
+    "question": "Which offences committed in the hostel can the Chief Warden handle without convening a Proctorial Board meeting?",
+    "expected_answer": "Minor offences.",
+    "source_page": 6,
+    "source_doc": "DoT Policy 2025-26"
+  },
+  {
+    "id": 37,
+    "category": "factual",
+    "question": "What happens to a student's Face ID when they accumulate 3 black dots?",
+    "expected_answer": "It is blocked for one week (and first-year students are not considered for change of branch).",
+    "source_page": 4,
+    "source_doc": "DoT Policy 2025-26"
+  },
+  {
+    "id": 38,
+    "category": "paraphrased",
+    "question": "How many White DoTs can a student earn for publishing in a Q1 or Q2 quartile journal?",
+    "expected_answer": "Four White DoTs (as corresponding and first author).",
+    "source_page": 7,
+    "source_doc": "DoT Policy 2025-26"
+  },
+  {
+    "id": 39,
+    "category": "factual",
+    "question": "When are attendance email and SMS alerts activated for students below 75% attendance?",
+    "expected_answer": "During Mid-Term 1 and Mid-Term 2.",
+    "source_page": 4,
+    "source_doc": "Attendance Monitoring Policy"
+  },
+  {
+    "id": 40,
+    "category": "factual",
+    "question": "After how many consecutive absences must the student, their parents and the HoD be informed?",
+    "expected_answer": "Three consecutive absences.",
+    "source_page": 4,
+    "source_doc": "Attendance Monitoring Policy"
+  },
+  {
+    "id": 41,
+    "category": "factual",
+    "question": "How long is the registration window without late fees, according to the attendance policy?",
+    "expected_answer": "3 days after the day of registration.",
+    "source_page": 5,
+    "source_doc": "Attendance Monitoring Policy"
+  },
+  {
+    "id": 42,
+    "category": "paraphrased",
+    "question": "Does missing class for a co-curricular or extra-curricular activity count towards the 75% attendance requirement?",
+    "expected_answer": "No — such absences are not excused; the student must absorb them within the 25% tolerance.",
+    "source_page": 5,
+    "source_doc": "Attendance Monitoring Policy"
+  },
+  {
+    "id": 43,
+    "category": "factual",
+    "question": "How many days before the last instruction day must the consolidated attendance list naming detained students be sent to the HoD or Director's office?",
+    "expected_answer": "Three days prior to the last instruction day.",
+    "source_page": 5,
+    "source_doc": "Attendance Monitoring Policy"
+  },
+  {
+    "id": 44,
+    "category": "factual",
+    "question": "Out of 100% attendance, how much is mandatory and what is the rest reserved for?",
+    "expected_answer": "75% is mandatory; the remaining 25% is reserved for other reasons including medical, academic and personal.",
+    "source_page": 6,
+    "source_doc": "Code of Ethics and Conduct",
+    "alt_sources": [
+      {
+        "document": "Attendance Monitoring Policy",
+        "page": 5
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "category": "factual",
+    "question": "What must a student obtain to leave the campus during class hours?",
+    "expected_answer": "An out-pass from the Head of the Department (HoD).",
+    "source_page": 5,
+    "source_doc": "Code of Ethics and Conduct"
+  },
+  {
+    "id": 46,
+    "category": "factual",
+    "question": "What must accompany an application for medical leave?",
+    "expected_answer": "Valid medical certificates.",
+    "source_page": 5,
+    "source_doc": "Code of Ethics and Conduct"
+  },
+  {
+    "id": 47,
+    "category": "factual",
+    "question": "Are students allowed to bring vehicles inside the campus?",
+    "expected_answer": "No — students shall not bring any vehicles inside the campus.",
+    "source_page": 5,
+    "source_doc": "Code of Ethics and Conduct"
+  },
+  {
+    "id": 48,
+    "category": "factual",
+    "question": "How can students raise a complaint with the Student Grievance Cell?",
+    "expected_answer": "Approach the cell's members or any of their teachers, or express the grievance online by filling out the form.",
+    "source_page": 8,
+    "source_doc": "Code of Ethics and Conduct"
+  },
+  {
+    "id": 49,
+    "category": "factual",
+    "question": "Within how many days must complaints about suspected plagiarism from external agencies be acted upon?",
+    "expected_answer": "Within 30 days.",
+    "source_page": 3,
+    "source_doc": "Plagiarism Policy 2016"
+  },
+  {
+    "id": 50,
+    "category": "factual",
+    "question": "What can happen to a student's programme in a case of high-level plagiarism?",
+    "expected_answer": "The student's programme may be terminated.",
+    "source_page": 3,
+    "source_doc": "Plagiarism Policy 2016"
+  },
+  {
+    "id": 51,
+    "category": "factual",
+    "question": "Who sets up the fact-finding committee for a plagiarism case against a student, and who is on it?",
+    "expected_answer": "The Dean of the Faculty; it has the Director of the concerned School, the Head of the Department and one senior faculty member from another Department.",
+    "source_page": 3,
+    "source_doc": "Plagiarism Policy 2016"
+  },
+  {
+    "id": 52,
+    "category": "paraphrased",
+    "question": "What can happen to a degree that was already awarded if plagiarism is later proven?",
+    "expected_answer": "The degree may be rescinded.",
+    "source_page": 3,
+    "source_doc": "Plagiarism Policy 2016"
+  },
+  {
+    "id": 53,
+    "category": "factual",
+    "question": "Which plagiarism detection software does the policy mention?",
+    "expected_answer": "Turnitin.",
+    "source_page": 2,
+    "source_doc": "Plagiarism Policy 2016"
+  },
+  {
+    "id": 54,
+    "category": "factual",
+    "question": "Who sets up the fact-finding committee for a plagiarism complaint against a faculty member, and how many members does it have?",
+    "expected_answer": "The President; it has 3 members — two senior faculty members in the concerned specialization and one from another academic department.",
+    "source_page": 4,
+    "source_doc": "Plagiarism Policy 2016"
+  },
+  {
+    "id": 55,
+    "category": "cross_reference",
+    "question": "Who can a student appeal to against a disciplinary penalty?",
+    "expected_answer": "The 2025-26 DoT Policy says the Dean of Students' Welfare; the older 2019 Code of Ethics says the President, whose decision is final.",
+    "source_page": 7,
+    "source_doc": "DoT Policy 2025-26",
+    "alt_sources": [
+      {
+        "document": "Code of Ethics and Conduct",
+        "page": 7
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "category": "cross_reference",
+    "question": "Is ragging a major offence, and what is the penalty?",
+    "expected_answer": "Yes — Major Offence-II under the DoT Policy (5-6 black dots); the Code of Ethics adds that a student whose explanation is unsatisfactory would be expelled.",
+    "source_page": 4,
+    "source_doc": "DoT Policy 2025-26",
+    "alt_sources": [
+      {
+        "document": "Code of Ethics and Conduct",
+        "page": 7
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "category": "cross_reference",
+    "question": "Is using a mobile phone during class an offence, and how serious is it?",
+    "expected_answer": "Yes — a minor offence under the DoT Policy (1-2 black dots); the Code of Ethics says no mobile phone use during academic activities, and a violation invites penal action.",
+    "source_page": 3,
+    "source_doc": "DoT Policy 2025-26",
+    "alt_sources": [
+      {
+        "document": "DoT Policy 2025-26",
+        "page": 4
+      },
+      {
+        "document": "Code of Ethics and Conduct",
+        "page": 5
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "category": "unanswerable",
+    "question": "What is the amount of the financial penalty for littering on campus?",
+    "expected_answer": "NOT IN DOCUMENT — the Code of Ethics says littering invites a financial penalty but no document gives an amount.",
+    "source_page": null
+  },
+  {
+    "id": 59,
+    "category": "unanswerable",
+    "question": "What is the penalty for cheating in an end-semester examination?",
+    "expected_answer": "NOT IN DOCUMENT — no document states a penalty for exam cheating (the Plagiarism Policy covers plagiarism only).",
+    "source_page": null
+  },
+  {
+    "id": 60,
+    "category": "unanswerable",
+    "question": "Within how many days does the Grievance Redressal Cell resolve a complaint?",
+    "expected_answer": "NOT IN DOCUMENT — the Code of Ethics only says complaints are treated with sensitivity and confidentiality; no timeframe is given.",
+    "source_page": null
+  },
+  {
+    "id": 61,
+    "category": "unanswerable",
+    "question": "What is the phone number of the anti-ragging helpline?",
+    "expected_answer": "NOT IN DOCUMENT — no anti-ragging helpline number is given in any document.",
+    "source_page": null
+  },
+  {
+    "id": 62,
+    "category": "unanswerable",
+    "question": "What is a good recipe for chocolate cake?",
+    "expected_answer": "NOT IN DOCUMENT — unrelated to the MUJ policy documents.",
+    "source_page": null
+  }
+]

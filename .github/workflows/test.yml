@@ -1,0 +1,91 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      run_full_eval:
+        description: "Also run the full 62-question Groq-backed eval (costs real tokens against the daily quota)"
+        type: boolean
+        default: false
+
+jobs:
+  # Fast, free tests — no Groq calls. Runs on every push/PR.
+  test:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    env:
+      REDIS_URL: redis://localhost:6379/1
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      # Rebuilds chroma_db from data/ + the committed ocr_cache/ (so scanned PDFs reuse
+      # cached OCR text instead of re-running OCR in CI). This also doubles as a test
+      # that ingestion itself doesn't crash.
+      - name: Build the vector database
+        run: python ingest.py
+
+      - name: Run tests
+        run: python -m pytest tests/ -v
+
+  # The real, Groq-backed eval — costs tokens against the shared daily quota (we hit this
+  # limit more than once in local testing), so this does NOT run on every push. It runs
+  # only when triggered manually (Actions tab -> Run workflow -> check "run_full_eval").
+  full-eval:
+    if: github.event_name == 'workflow_dispatch' && inputs.run_full_eval
+    runs-on: ubuntu-latest
+    needs: test
+    services:
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    env:
+      REDIS_URL: redis://localhost:6379/1
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      - name: Build the vector database
+        run: python ingest.py
+
+      - name: Run the full eval set
+        run: python run_eval.py --output eval_results_full.json
+
+      - name: Check results against the known-good bar
+        run: python check_eval_results.py eval_results_full.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: eval_results_full.json
