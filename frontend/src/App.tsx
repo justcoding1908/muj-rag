@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { askQuestion, ApiError, type Source } from "./api";
+import InfoPanel from "./InfoPanel";
 import "./App.css";
 
 interface ChatMessage {
@@ -24,6 +26,7 @@ export default function App() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [panel, setPanel] = useState<"how" | "sources" | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -68,7 +71,17 @@ export default function App() {
       <header className="header">
         <h1>MUJ Policy Assistant</h1>
         <p>Ask about academic rules, attendance, discipline, ethics, or plagiarism policy.</p>
+        <div className="header-links">
+          <button className="link-button" onClick={() => setPanel("how")}>
+            How this works
+          </button>
+          <button className="link-button" onClick={() => setPanel("sources")}>
+            Source documents
+          </button>
+        </div>
       </header>
+
+      {panel && <InfoPanel view={panel} onClose={() => setPanel(null)} />}
 
       <main className="chat">
         {messages.length === 0 && (
@@ -89,7 +102,13 @@ export default function App() {
             {m.role === "assistant" && !m.foundInDocument && (
               <span className="not-found-badge">Not in the documents</span>
             )}
-            <p className="message-text">{m.text}</p>
+            {m.role === "assistant" ? (
+              <div className="message-text markdown">
+                <ReactMarkdown>{m.text}</ReactMarkdown>
+              </div>
+            ) : (
+              <p className="message-text">{m.text}</p>
+            )}
             {m.sources && m.sources.length > 0 && (
               <div className="sources">
                 {m.sources.map((s, i) => (
