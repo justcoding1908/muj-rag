@@ -35,9 +35,11 @@ This runs as a second Railway service in the same project as the backend:
 1. In Railway, add a new service from the same `justcoding1908/muj-rag` GitHub repo.
 2. Set its **Root Directory** to `frontend` (Settings → Source) — this is what tells
    Railway to use `frontend/Dockerfile` instead of the backend's root-level one.
-3. Set the build-time variable `VITE_API_URL` to the backend's real Railway URL.
-   Railway build args are configured separately from regular runtime env vars — check
-   under Settings → Build, not the normal Variables tab.
+3. Set `VITE_API_URL` to the backend's real Railway URL in this service's **Variables**
+   tab. Railway passes service variables through as Docker build args automatically
+   when the Dockerfile declares a matching `ARG` (it does here) — if the build
+   somehow doesn't pick it up, look for a separate build-args section in Railway's
+   current UI; this has moved around between versions.
 4. Generate a public domain for this service once it deploys.
 
 The Dockerfile is a two-stage build: compiles the Vite app in a `node:22-slim` build
