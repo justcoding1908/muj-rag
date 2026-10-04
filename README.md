@@ -122,3 +122,4 @@ walks through each result and asks a human.
 | `eval_set.json` | The 62-question eval set (factual, paraphrased, cross-reference, unanswerable) |
 | `injection_tests.json` / `run_injection_tests.py` | Prompt-injection test set |
 | `tests/` | Automated pytest suite (no LLM calls) |
+| `frontend/` | React + TypeScript chat UI for this API — see [frontend/README.md](frontend/README.md) |
