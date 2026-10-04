@@ -1,3 +1,4 @@
+import logging
 import os
 import time
 from contextlib import asynccontextmanager
@@ -10,6 +11,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from rag_chain import build_chain, redis_client
+
+logger = logging.getLogger("muj_rag_api")
 
 # Groq's free tier shares one 200,000-token/day budget across every question asked —
 # we hit this limit for real during testing. One client without a limit can burn through
@@ -85,7 +88,11 @@ def ask(req: AskRequest, request: Request):
     try:
         result = request.app.state.chain.invoke(req.question)
     except Exception:
-        # Don't leak internals (stack traces, API keys embedded in error messages) to the client.
+        # Full detail goes to the server log (Railway captures container stdout/stderr) —
+        # never to the client, which only gets a generic message. An earlier version of
+        # this handler logged nothing at all, which made a real production failure
+        # undiagnosable from the deploy logs alone.
+        logger.exception("chain.invoke failed for question: %r", req.question)
         raise HTTPException(status_code=503, detail="The assistant is temporarily unavailable. Please try again shortly.")
 
     return AskResponse(
