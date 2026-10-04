@@ -1,5 +1,10 @@
 FROM python:3.14-slim
 
+# Python buffers stdout/stderr by default when it isn't attached to a terminal (true
+# inside a container) — without this, print()/logging output sits in a buffer and may
+# never reach `docker logs`/Railway's log viewer at all while the process keeps running.
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
 
 # opencv (a rapidocr dependency) needs these at runtime even though we won't actually
