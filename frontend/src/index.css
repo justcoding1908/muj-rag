@@ -4,5 +4,6 @@
 }
 
 body {
-  color-scheme: light dark;
+  /* Neobrutalism theme is a single committed light palette, not dark-mode aware. */
+  color-scheme: light;
 }
