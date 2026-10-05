@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { SOURCE_DOCUMENTS } from "./sources";
 
 interface InfoPanelProps {
@@ -6,13 +7,45 @@ interface InfoPanelProps {
 }
 
 export default function InfoPanel({ view, onClose }: InfoPanelProps) {
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  useEffect(() => {
+    const previousFocus = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+    closeRef.current?.focus();
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onCloseRef.current();
+      } else if (event.key === "Tab") {
+        event.preventDefault();
+        closeRef.current?.focus();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      previousFocus?.focus();
+    };
+  }, []);
+
   return (
     <div className="panel-overlay" onClick={onClose}>
-      <div className="panel" onClick={(e) => e.stopPropagation()}>
+      <section
+        className="panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="info-panel-heading"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="panel-header">
-          <h2>{view === "how" ? "How this works" : "Source documents"}</h2>
-          <button className="panel-close" onClick={onClose} aria-label="Close">
-            ✕
+          <h2 id="info-panel-heading">{view === "how" ? "How this works" : "Source documents"}</h2>
+          <button ref={closeRef} className="panel-close" type="button" onClick={onClose} aria-label="Close dialog">
+            ×
           </button>
         </div>
 
@@ -52,7 +85,7 @@ export default function InfoPanel({ view, onClose }: InfoPanelProps) {
             ))}
           </ul>
         )}
-      </div>
+      </section>
     </div>
   );
 }
