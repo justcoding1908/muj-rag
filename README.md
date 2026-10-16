@@ -9,6 +9,16 @@ questions those documents don't cover.
 **Live demo:** https://muj-rag.vercel.app (frontend on Vercel, API on Railway at
 https://muj-rag-production.up.railway.app)
 
+## Screenshots
+
+| Home | Answer with citations |
+|---|---|
+| ![Home screen with suggested questions](screenshots/home.png) | ![An answer citing the exact document and pages](screenshots/answer.png) |
+
+| Source documents (click the eye to view the PDF) | How this works |
+|---|---|
+| ![Source documents panel](screenshots/source-documents.png) | ![How this works panel](screenshots/how-it-works.png) |
+
 ## How it works
 
 1. The 5 policy PDFs in `data/` are split into chunks and embedded (`ingest.py`), then
