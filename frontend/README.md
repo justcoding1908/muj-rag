@@ -28,20 +28,14 @@ backend. If those change, update both sides.
 bundle when you run `npm run build`. There's no server-side config to change after
 deploying; a different backend URL means a new build.
 
-## Deploying (Railway)
+## Deploying (Vercel)
 
-This runs as a second Railway service in the same project as the backend:
+1. In Vercel, import the `justcoding1908/muj-rag` GitHub repo.
+2. Set **Root Directory** to `frontend`. Vercel detects Vite and uses `npm run build` with
+   the `dist` output folder.
+3. Add the environment variable `VITE_API_URL` set to the backend's URL
+   (`https://muj-rag-production.up.railway.app`). It is read at build time, so changing it
+   means redeploying.
+4. Every push to `main` redeploys automatically.
 
-1. In Railway, add a new service from the same `justcoding1908/muj-rag` GitHub repo.
-2. Set its **Root Directory** to `frontend` (Settings → Source) — this is what tells
-   Railway to use `frontend/Dockerfile` instead of the backend's root-level one.
-3. Set `VITE_API_URL` to the backend's real Railway URL in this service's **Variables**
-   tab. Railway passes service variables through as Docker build args automatically
-   when the Dockerfile declares a matching `ARG` (it does here) — if the build
-   somehow doesn't pick it up, look for a separate build-args section in Railway's
-   current UI; this has moved around between versions.
-4. Generate a public domain for this service once it deploys.
-
-The Dockerfile is a two-stage build: compiles the Vite app in a `node:22-slim` build
-stage, then serves the static output with [`serve`](https://www.npmjs.com/package/serve)
-in a second, smaller stage.
+The backend allows any origin in CORS, so no backend change is needed for the Vercel domain.
