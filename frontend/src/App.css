@@ -600,3 +600,37 @@ button {
     transition-duration: .01ms !important;
   }
 }
+a.source-chip {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.source-chip:hover,
+a.source-chip:focus-visible {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.doc-view {
+  flex: none;
+  display: inline-flex;
+  padding: 5px;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.doc-view:hover,
+.doc-view:focus-visible {
+  background: var(--ink);
+  color: var(--white);
+}

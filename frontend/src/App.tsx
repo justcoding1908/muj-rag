@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { askQuestion, ApiError, type Source } from "./api";
+import { documentUrl } from "./sources";
 import InfoPanel from "./InfoPanel";
 import "./App.css";
 
@@ -186,9 +187,16 @@ export default function App() {
             {m.sources && m.sources.length > 0 && (
               <div className="sources">
                 {m.sources.map((s, i) => (
-                  <span key={i} className="source-chip">
+                  <a
+                    key={i}
+                    className="source-chip"
+                    href={documentUrl(s.document, s.page) ?? undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Open this page of the PDF"
+                  >
                     {s.document}, p.{s.page}
-                  </span>
+                  </a>
                 ))}
               </div>
             )}

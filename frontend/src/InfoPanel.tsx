@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { SOURCE_DOCUMENTS } from "./sources";
+import { SOURCE_DOCUMENTS, documentUrl } from "./sources";
 
 interface InfoPanelProps {
   view: "how" | "sources";
@@ -81,7 +81,22 @@ export default function InfoPanel({ view, onClose }: InfoPanelProps) {
         ) : (
           <ul className="panel-list">
             {SOURCE_DOCUMENTS.map((doc) => (
-              <li key={doc}>{doc}</li>
+              <li key={doc.name} className="doc-item">
+                <span>{doc.name}</span>
+                <a
+                  className="doc-view"
+                  href={documentUrl(doc.name) ?? undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${doc.name} (PDF, opens in a new tab)`}
+                  title="View PDF"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </a>
+              </li>
             ))}
           </ul>
         )}

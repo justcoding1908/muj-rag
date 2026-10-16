@@ -12,7 +12,7 @@ export interface AskResponse {
 
 // Set via frontend/.env (local dev) or the VITE_API_URL env var at build time
 // (Railway). Falls back to the live backend so `npm run dev` works with no setup.
-const API_URL = import.meta.env.VITE_API_URL ?? "https://muj-rag-production.up.railway.app";
+const API_URL = import.meta.env.VITE_API_URL || "https://muj-rag-production.up.railway.app";
 
 export class ApiError extends Error {
   status: number;
