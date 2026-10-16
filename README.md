@@ -6,6 +6,9 @@ the DoT (discipline) policy, the code of ethics and conduct, and the plagiarism 
 citing the exact document and page each answer came from, and refusing to answer
 questions those documents don't cover.
 
+**Live demo:** https://muj-rag.vercel.app (frontend on Vercel, API on Railway at
+https://muj-rag-production.up.railway.app)
+
 ## How it works
 
 1. The 5 policy PDFs in `data/` are split into chunks and embedded (`ingest.py`), then
@@ -68,7 +71,7 @@ pytest tests/
 These are free — no Groq calls. They check retrieval, the citation-grounding safety net,
 and the API's request validation and rate limiting.
 
-## Deploying (Railway)
+## Deploying the backend (Railway)
 
 A `Dockerfile` is included that builds the vector database at image-build time (from
 the committed `data/` PDFs and `ocr_cache/`, so no OCR or network calls happen at
@@ -122,4 +125,4 @@ walks through each result and asks a human.
 | `eval_set.json` | The 62-question eval set (factual, paraphrased, cross-reference, unanswerable) |
 | `injection_tests.json` / `run_injection_tests.py` | Prompt-injection test set |
 | `tests/` | Automated pytest suite (no LLM calls) |
-| `frontend/` | React + TypeScript chat UI for this API — see [frontend/README.md](frontend/README.md) |
+| `frontend/` | React + TypeScript chat UI for this API, deployed on Vercel — see [frontend/README.md](frontend/README.md) |
